@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script stops "4-to_infinity_and_beyond" process
-var=$(pkill -f 4-to_infinity_and_beyond)
-echo "$var"
+
+pkill -f 4-to_infinity_and_beyond
