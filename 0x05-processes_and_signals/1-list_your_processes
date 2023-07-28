@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script is displaying a list of currently running processes
-var=$(ps aux)
+var=$(ps -eH -o pid,ppid,user,cpu,%mem,vsz,rss,tty,stat,start,time,cmd)
 echo "$var"
