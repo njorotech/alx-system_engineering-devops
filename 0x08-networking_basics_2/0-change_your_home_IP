@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script configures the Ubuntu server
+cp /etc/hosts ~/hosts.copy
+echo -e "127.0.0.2\tlocalhost" >> ~/hosts.copy
+echo -e "8.8.8.8\tfacebook.com" >> ~/hosts.copy
+sudo cp ~/hosts.copy /etc/hosts
