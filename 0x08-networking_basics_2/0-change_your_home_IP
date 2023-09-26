@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# This script configures the Ubuntu server
-file=~/hosts.changed
-cp /etc/hosts $file
-sed -i s/127.*$/127.0.0.2\\tlocalhost\\n8.8.8.8\\tfacebook.com/g $file
-sudo cp -f $file /etc/hosts
