@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# This script displays the content of the directory
-var=$(ls)
-for i in $var
-do
-	echo "${i#*-}"
-done
