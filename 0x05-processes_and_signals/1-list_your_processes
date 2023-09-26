@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# This script is displaying a list of currently running processes
-var=$(ps axuf)
-echo "$var"
