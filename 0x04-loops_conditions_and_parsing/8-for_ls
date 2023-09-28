@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #Displays the content of the current directory
-for i in `ls`
+lsfile="file.txt"
+ls > "$lsfile"
+for i in $lsfile
 do
-	echo $i
+	cut -d "-" -f 2 "$i"
 done
