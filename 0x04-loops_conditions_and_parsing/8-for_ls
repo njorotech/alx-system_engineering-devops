@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Displays the content of the current directory
 for i in `ls`
 do
 	echo $i

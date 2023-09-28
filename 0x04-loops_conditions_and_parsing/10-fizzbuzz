@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Displays FizzBuzz, Fizz or Buzz according to loop iteration
 for i in {1..100}
 do
 	if ((i%3 == 0)) && ((i%5 == 0))
