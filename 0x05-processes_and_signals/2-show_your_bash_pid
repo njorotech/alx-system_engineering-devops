@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Show your Bash PID
+# shellcheck disable=SC2009
+word="bash"
+while IFS= read -r line
+do
+	if [[ $line == *"$word"* ]]
+	then
+		echo "$line"
+	fi
+done < <(ps axjf)
