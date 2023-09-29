@@ -7,9 +7,9 @@ bye() {
 	exit 0
 
 }
-trap bye SIGTERM
 while true
 do
 echo "To infinity and beyond"
 sleep 2
+trap bye SIGTERM
 done
