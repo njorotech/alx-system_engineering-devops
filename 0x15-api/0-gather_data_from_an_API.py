@@ -12,4 +12,15 @@ if __name__ == "__main__":
     payload = {"userId": emId}
     todo_response = requests.get(f'{url}/todos', params=payload)
     todo = todo_response.json()
-    print(todo)
+    totalTasks = 0
+    doneTasks = 0
+    taskTitles = []
+    for item in todo:
+        totalTasks += 1
+        taskTitles.append(item['title'])
+        if item['completed']:
+            doneTasks += 1
+    print(f'Employee {name} is done with tasks({doneTasks}/{totalTasks}):')
+    for title in taskTitles:
+        print(f'\t {title}')
+    # print(todo)
