@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+''' Returns information about TODO list progress of an employee.'''
 import requests
 from sys import argv
 
