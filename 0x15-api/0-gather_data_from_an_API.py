@@ -18,9 +18,9 @@ if __name__ == "__main__":
     taskTitles = []
     for item in todo:
         totalTasks += 1
-        taskTitles.append(item['title'])
         if item['completed']:
             doneTasks += 1
+            taskTitles.append(item['title'])
     print(f'Employee {name} is done with tasks({doneTasks}/{totalTasks}):')
     for title in taskTitles:
         print(f'\t {title}')
