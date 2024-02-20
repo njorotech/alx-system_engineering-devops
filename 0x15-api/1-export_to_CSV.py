@@ -9,7 +9,7 @@ if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com'
     usersResponse = requests.get(f'{url}/users/{emId}')
     user = usersResponse.json()
-    name = user['name']
+    name = user['username']
     filename = f'{emId}.csv'
 
     payload = {"userId": emId}
