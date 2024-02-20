@@ -29,6 +29,6 @@ if __name__ == "__main__":
                 status = 'True'
             else:
                 status = 'False'
-            writer.writerow({'USER_ID': f'{emId}', 'USERNAME': f'{name}',
-                             'TASK_COMPLETED_STATUS': f'{status}',
-                             'TASK_TITLE': f'{item["title"]}'})
+            writer.writerow({'USER_ID': emId, 'USERNAME': name,
+                             'TASK_COMPLETED_STATUS': status,
+                             'TASK_TITLE': item.get('title')})
