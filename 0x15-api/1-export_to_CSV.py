@@ -10,6 +10,7 @@ if __name__ == "__main__":
     usersResponse = requests.get(f'{url}/users/{emId}')
     user = usersResponse.json()
     name = user['name']
+    filename = f'{emId}.csv'
 
     payload = {"userId": emId}
     todo_response = requests.get(f'{url}/todos', params=payload)
