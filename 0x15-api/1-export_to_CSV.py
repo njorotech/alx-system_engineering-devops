@@ -16,7 +16,7 @@ if __name__ == "__main__":
     todo_response = requests.get(f'{url}/todos', params=payload)
     todo = todo_response.json()
 
-    with open('USER_ID.csv', mode='w') as csv_file:
+    with open(filename, mode='w') as csv_file:
         fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
                       "TASK_TITLE"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames,
