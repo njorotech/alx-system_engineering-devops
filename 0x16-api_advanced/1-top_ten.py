@@ -9,6 +9,9 @@ import requests
 def top_ten(subreddit):
     """Prints titles of the first 10 hot posts"""
 
+    if subreddit is None or type(subreddit) is not str:
+        print(None)
+
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=9'
     headers = {
         'User-Agent': 'Muchoki'
