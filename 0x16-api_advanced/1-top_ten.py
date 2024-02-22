@@ -1,33 +1,30 @@
 #!/usr/bin/python3
-
 """
-prints the titles of the first 10 hot posts listed for a given subreddit
+queries the Reddit API and prints the titles of the first 10 hot posts listed
+for a given subreddit.
 """
-
-from requests import get
+import requests
 
 
 def top_ten(subreddit):
-    """
-    function that queries the Reddit API and prints the titles of the first
-    10 hot posts listed for a given subreddit
-    """
+    """Prints titles of the first 10 hot posts"""
 
-    if subreddit is None or not isinstance(subreddit, str):
-        print("None")
+    if subreddit is None or type(subreddit) is not str:
+        return None
 
-    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
-    params = {'limit': 10}
-    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
-
-    response = get(url, headers=user_agent, params=params)
-    results = response.json()
-
-    try:
-        my_data = results.get('data').get('children')
-
-        for i in my_data:
-            print(i.get('data').get('title'))
-
-    except Exception:
-        print("None")
+    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=9'
+    headers = {
+        'User-Agent': 'Muchoki'
+    }
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    # print(response.status_code)
+    if response.status_code == 200:
+        json_data = response.json()
+        if not json_data["data"]["children"]:
+            return None
+        else:
+            # print(json.dumps(json_data, indent=4))
+            for item in json_data["data"]["children"]:
+                print(item["data"]["title"])
+    else:
+        return None
