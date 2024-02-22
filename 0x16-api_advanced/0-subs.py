@@ -3,7 +3,6 @@
 Queries the Reddit API and returns the number of subscribers for a given
 subreddit. If an invalid subreddit is given, the function should return 0
 '''
-
 import requests
 
 
@@ -19,5 +18,6 @@ def number_of_subscribers(subreddit):
     if response.status_code == 404:
         return 0
     json_data = response.json()
-    subscribers = json_data['data']['subscribers']
+    data_results = json_data.get("data")
+    subscribers = data_results.get("subscribers")
     return subscribers
