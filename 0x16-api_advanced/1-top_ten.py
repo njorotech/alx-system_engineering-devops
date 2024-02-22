@@ -24,4 +24,4 @@ def top_ten(subreddit):
         for item in json_data["data"]["children"]:
             print(item["data"]["title"])
     else:
-        print("None")
+        print(None)
