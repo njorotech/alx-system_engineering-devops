@@ -13,6 +13,9 @@ def number_of_subscribers(subreddit):
     headers = {
         'User-Agent': 'Muchoki'
     }
+
+    if subreddit is None or type(subreddit) is not str:
+        print(None)
     response = requests.get(url, headers=headers, allow_redirects=False)
     # print(response.status_code)
     if response.status_code == 200:
