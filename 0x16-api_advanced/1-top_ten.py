@@ -10,6 +10,7 @@ def top_ten(subreddit):
     """Prints titles of the first 10 hot posts"""
 
     if subreddit is None or type(subreddit) is not str:
+        print(None)
         return None
 
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=9'
@@ -27,4 +28,5 @@ def top_ten(subreddit):
             for item in json_data["data"]["children"]:
                 print(item["data"]["title"])
     else:
+        print(None)
         return None
