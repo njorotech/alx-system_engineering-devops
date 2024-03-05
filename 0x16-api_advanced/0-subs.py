@@ -14,8 +14,8 @@ def number_of_subscribers(subreddit):
         'User-Agent': 'Mozilla/5.0'
     }
 
-    if subreddit is None or not isinstance(subreddit, str):
-        return 0
+    # if subreddit is None or not isinstance(subreddit, str):
+    #     return 0
     # if subreddit is None or type(subreddit) is not str:
     #     return 0
     response = requests.get(url, headers=headers, allow_redirects=False)
