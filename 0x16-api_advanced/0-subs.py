@@ -15,7 +15,7 @@ def number_of_subscribers(subreddit):
     }
 
     if subreddit is None or type(subreddit) is not str:
-        print(None)
+        return 0
     response = requests.get(url, headers=headers, allow_redirects=False)
     # print(response.status_code)
     if response.status_code == 200:
