@@ -11,7 +11,7 @@ def number_of_subscribers(subreddit):
 
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     headers = {
-        'User-Agent': 'Muchoki'
+        'User-Agent': 'Mozilla/5.0'
     }
 
     if subreddit is None or not isinstance(subreddit, str):
