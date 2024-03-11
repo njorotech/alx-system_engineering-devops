@@ -4,3 +4,9 @@ exec {'increase-ulimit':
   path    => '/usr/local/bin/:/bin/',
 
 }
+
+# Restart nginx after increasing ulimit
+exec {'Restart-nginx':
+  command => 'nginx restart',
+  path    => '/etc/init.d/',
+}
